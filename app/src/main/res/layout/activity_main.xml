@@ -7,15 +7,101 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="153dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/nameDish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Name"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:paddingTop="10dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="10dp"
+        android:textColor="@android:color/black"
+        />
+
+    <TextView
+        android:id="@+id/minutes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+        android:textSize="12sp"
+        android:layout_below="@id/nameDish"
+        android:textColor="@color/colorGray"
+        android:paddingStart="15dp"
+        android:paddingEnd="10dp"
+        android:textStyle="bold"
+
+        />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="170dp"
+        android:layout_below="@id/minutes"
+        android:visibility="visible"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/back2"/>
+
+    <TextView
+        android:id="@+id/preparacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/minutes"
+        android:paddingStart="15dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="20dp"
+        android:textStyle="bold"
+        android:text="@string/preparacion"
+        android:textColor="@android:color/black"
+        />
+
+    <TextView
+        android:id="@+id/recepie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preparacion"
+        android:paddingStart="15dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/recepie" />
+
+    <TextView
+        android:id="@+id/ingredientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view"
+        android:paddingStart="15dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="20dp"
+        android:textStyle="bold"
+        android:text="@string/ingredientes"
+        android:textColor="@android:color/black"
+        />
+
+    <TextView
+        android:id="@+id/ingredientesText"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_below="@id/ingredientes"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="30dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:text="@string/ingredientesText"
+        android:visibility="visible"
+        android:background="@drawable/back"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/anadirIngrediente" />
+
 
 </RelativeLayout>

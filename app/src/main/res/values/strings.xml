@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Recipe</string>
+    <string name="Name">Tortilla de Patata</string>
+    <string name="time">45 minutos</string>
+    <string name="preparacion">Preparación</string>
+    <string name="recepie">Recepie</string>
+    <string name="ingredientes">Ingredientes</string>
+    <string name="ingredientesText">Patatas</string>
+    <string name="anadirIngrediente">AÑADIR INGREDIENTE</string>
 </resources>
