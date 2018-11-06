@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView ingredientesText;
     private Button anadir;
 
-    private ArrayList<Recipe> mRecipe;
+    public ArrayList<Recipe> mRecipe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,10 @@ public class MainActivity extends AppCompatActivity {
         anadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(intent);
+
+
             }
         });
         }
