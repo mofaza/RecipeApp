@@ -8,6 +8,13 @@ public class Recipe {
     private List<String> ingredients;
     private String description;
 
+    public Recipe(String name, Integer minutes, List<String> ingredients, String description) {
+        this.name = name;
+        this.minutes = minutes;
+        this.ingredients = ingredients;
+        this.description = description;
+    }
+
     public String getName() {
         return name;
     }

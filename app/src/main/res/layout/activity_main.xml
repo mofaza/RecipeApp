@@ -20,7 +20,7 @@
         />
 
     <TextView
-        android:id="@+id/minutes"
+        android:id="@+id/time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/time"
@@ -37,7 +37,7 @@
         android:id="@+id/view"
         android:layout_width="wrap_content"
         android:layout_height="170dp"
-        android:layout_below="@id/minutes"
+        android:layout_below="@id/time"
         android:visibility="visible"
         android:layout_marginTop="10dp"
         android:background="@drawable/back2"/>
@@ -46,7 +46,7 @@
         android:id="@+id/preparacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/minutes"
+        android:layout_below="@id/time"
         android:paddingStart="15dp"
         android:paddingEnd="10dp"
         android:paddingTop="20dp"
