@@ -1,10 +1,12 @@
 package elias.lind.recipeapp;
 
+import android.content.Intent;
 import android.icu.util.Output;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -40,7 +42,19 @@ public class MainActivity extends AppCompatActivity {
         String mRecipeString = TextUtils.join("\n\n", mRecipe.get(0).getIngredients());
         ingredientesText.setText(mRecipeString);
         recepie.setText(mRecipe.get(0).getDescription());
+
+        final Intent intent = new Intent(this, NewIngredientActivity.class);
+
+
+        anadir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
         }
+
+
 
 
     private void View(){

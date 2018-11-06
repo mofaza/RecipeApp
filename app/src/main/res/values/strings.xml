@@ -7,4 +7,8 @@
     <string name="ingredientes">Ingredientes</string>
     <string name="ingredientesText">Patatas</string>
     <string name="anadirIngrediente">AÑADIR INGREDIENTE</string>
+    <string name="activity2_name">Recipe</string>
+    <string name="Nuevo_Ingrediente">Nuevo Ingrediente</string>
+    <string name="escribir_aqui">escribir aqui</string>
+    <string name="andir">AÑADIR</string>
 </resources>
