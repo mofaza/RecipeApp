@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView ingredientes;
     private TextView ingredientesText;
     private Button anadir;
+    public static final int TEXT_REQUEST = 1;
+    private Boolean mStart = true;
 
     public ArrayList<Recipe> mRecipe;
 
@@ -32,16 +36,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        View();
 
         mRecipe = new ArrayList<>();
-        mRecipe.add(new Recipe("Tortillas de Patata", 60, Arrays.asList("Patatas", "Huevos"), "Cook and enjoy"));
-
-        nameDish.setText(mRecipe.get(0).getName());
-        time.setText(Integer.toString(mRecipe.get(0).getMinutes())+" minutos");
-        String mRecipeString = TextUtils.join("\n\n", mRecipe.get(0).getIngredients());
-        ingredientesText.setText(mRecipeString);
-        recepie.setText(mRecipe.get(0).getDescription());
+        mRecipe.add(new Recipe("Tortillas de Patata", 60, null, "Cook and enjoy"));
+        if (mStart) {
+            mRecipe.get(0).setIngredients(Arrays.asList("Patatas", "Bravas"));
+        }
+        mStart = false;
+        View();
 
         final Intent intent = new Intent(this, NewIngredientActivity.class);
 
@@ -50,17 +52,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(intent);
-
+                startActivityForResult(intent, TEXT_REQUEST);
 
             }
         });
-        }
+    }
 
-
-
-
-    private void View(){
+    private void View() {
 
         nameDish = findViewById(R.id.nameDish);
         time = findViewById(R.id.time);
@@ -70,5 +68,30 @@ public class MainActivity extends AppCompatActivity {
         ingredientesText = findViewById(R.id.ingredientesText);
 
         anadir = findViewById(R.id.button);
+
+        nameDish.setText(mRecipe.get(0).getName());
+        time.setText(Integer.toString(mRecipe.get(0).getMinutes()) + " minutos");
+        String mRecipeString = TextUtils.join("\n\n", mRecipe.get(0).getIngredients());
+        ingredientesText.setText(mRecipeString);
+        recepie.setText(mRecipe.get(0).getDescription());
+    }
+
+    public void onActivityResult(int requestCode, int resultCode,
+                                 Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == TEXT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                ArrayList<String> lines;
+                lines = new ArrayList<>();
+                final List<String> message = mRecipe.get(0).getIngredients();
+                lines.addAll(message);
+                String reply = data.getStringExtra(NewIngredientActivity.Reply);
+                lines.add(reply);
+                mRecipe.get(0).setIngredients(lines);
+                String mRecipeString = TextUtils.join("\n\n", mRecipe.get(0).getIngredients());
+                ingredientesText.setText(mRecipeString);
+
+            }
+        }
     }
 }
