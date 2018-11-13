@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">Recipe</string>
     <string name="Name">Tortilla de Patata</string>
-    <string name="time">45 minutos</string>
-    <string name="preparacion">Preparación</string>
-    <string name="recepie">Recepie</string>
-    <string name="ingredientes">Ingredientes</string>
+    <string name="time">45 minutes</string>
+    <string name="preparacion">Preparation</string>
+    <string name="recepie">Recipe</string>
+    <string name="ingredientes">Ingredients</string>
     <string name="ingredientesText">Patatas</string>
-    <string name="anadirIngrediente">AÑADIR INGREDIENTE</string>
+    <string name="anadirIngrediente">ADD INGREDIENT</string>
     <string name="activity2_name">Recipe</string>
-    <string name="Nuevo_Ingrediente">Nuevo Ingrediente</string>
-    <string name="escribir_aqui">escribir aqui</string>
-    <string name="andir">AÑADIR</string>
+    <string name="Nuevo_Ingrediente">NEW INGREDIENT</string>
+    <string name="escribir_aqui">write here</string>
+    <string name="andir">ADD</string>
 </resources>

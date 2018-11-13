@@ -38,9 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         mRecipe = new ArrayList<>();
-        mRecipe.add(new Recipe("Tortillas de Patata", 60, null, "Cook and enjoy"));
+        mRecipe.add(new Recipe("Omelette", 30, null, "Season beaten eggs with salt and pepper.\nHeat oil and butter in a frying pan over a medium-low heat\n" +
+                "\n" + "Pour the eggs into the pan. Let the mixture cook for about 20 seconds then scrape a line through the middle with a spatula, turn and cook for another 5 minutes. "));
         if (mStart) {
-            mRecipe.get(0).setIngredients(Arrays.asList("Patatas", "Bravas"));
+            mRecipe.get(0).setIngredients(Arrays.asList("3 eggs", "1 tsp oil/butter", "salt & pepper"));
         }
         mStart = false;
         View();
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         anadir = findViewById(R.id.button);
 
         nameDish.setText(mRecipe.get(0).getName());
-        time.setText(Integer.toString(mRecipe.get(0).getMinutes()) + " minutos");
+        time.setText(Integer.toString(mRecipe.get(0).getMinutes()) + " minutes");
         String mRecipeString = TextUtils.join("\n\n", mRecipe.get(0).getIngredients());
         ingredientesText.setText(mRecipeString);
         recepie.setText(mRecipe.get(0).getDescription());
